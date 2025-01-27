@@ -11,6 +11,7 @@ import java.util.Map;
 @LambdaHandler(
     lambdaName = "hello_word",
 	roleName = "hello_word-role",
+	isPublishVersion = true,
 	logsExpiration = RetentionSetting.SYNDICATE_ALIASES_SPECIFIED
 )
 public class HelloWord implements RequestHandler<Object, Map<String, Object>> {
