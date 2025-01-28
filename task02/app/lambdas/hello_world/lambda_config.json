@@ -1,10 +1,10 @@
 {
   "version": "1.0",
   "name": "hello_world",
-  "func_name": "handler.lambda_handler",
+  "func_name": "lambdas/hello_world/index.handler",
   "resource_type": "lambda",
   "iam_role_name": "hello_world-role",
-  "runtime": "python3.10",
+  "runtime": "nodejs20.x",
   "memory": 128,
   "timeout": 100,
   "lambda_path": "lambdas/hello_world",
@@ -15,6 +15,5 @@
   "alias": "${lambdas_alias_name}",
   "url_config": {"auth_type": "NONE"},
   "ephemeral_storage": 512,
-  "logs_expiration": "${logs_expiration}",
   "tags": {}
 }
