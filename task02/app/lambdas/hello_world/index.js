@@ -5,7 +5,7 @@ exports.handler = async (event) => {
     const validPath = '/hello';
 
     // Check for the HTTP method and path
-    if (event.httpMethod !== 'GET' || event.path !== validPath) {
+    if (event.path !== validPath) {
         return {
             statusCode: 400,
             body: JSON.stringify({
