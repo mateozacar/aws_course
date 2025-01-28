@@ -1,15 +1,17 @@
 exports.handler = async (event) => {
+    // Log the entire event object to understand what's being received
+    console.log("Received event:", JSON.stringify(event, null, 2));
 
     const expectedPath = '/hello';
-     if (event.path !== expectedPath) {
-            return {
-                statusCode: 400,
-                body: JSON.stringify({
-                    message: `Bad request syntax or unsupported method. Request path:  ${event.path}. HTTP method: ${event.httpMethod}`,
-                    statusCode: 400  // Including status code in the body if required
-                })
-            };
-      }
+    if (event.path !== expectedPath) {
+        return {
+            statusCode: 400,
+            body: JSON.stringify({
+                message: `Bad request syntax or unsupported method. Request path: ${event.path || 'undefined'}. HTTP method: ${event.httpMethod}`,
+                statusCode: 400  // Including status code in the body if required
+            })
+        };
+    }
 
     const response = {
         statusCode: 200,
