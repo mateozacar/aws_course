@@ -1,8 +1,10 @@
 exports.handler = async (event) => {
-    // TODO implement
     const response = {
         statusCode: 200,
-        message: JSON.stringify('Hello from Lambda'),
+        body: JSON.stringify({
+            statusCode: 200,    // Including status code inside the body
+            message: 'Hello from Lambda'
+        })
     };
     return response;
 };
